@@ -7,15 +7,9 @@ Flask によるフォーム処理や、生成AIのAPI連携などを含むフル
 
 ## 🛠️ 使用技術
 
-| カテゴリ         | 技術スタック                            |
-|------------------|-----------------------------------------|
-| フロントエンド    | HTML / Tailwind CSS / Flowbite / JavaScript |
-| バックエンド      | Python / Flask                          |
-| メール送信        | Flask-Mail（SMTP経由）                  |
-| API連携           | Hugging Face Chatbot API               |
-| セキュリティ対策  | `.env` による機密情報の管理             |
-
----
+- フロントエンド: HTML / Tailwind CSS / Flowbite
+- バックエンド: Python / Flask
+- メール送信: Flask-Mail
 
 ## 🔑 主な機能
 
