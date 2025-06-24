@@ -1,61 +1,67 @@
-# Unni 公式サイト
+# Unni｜企業公式サイト（ポートフォリオ）
 
-これは実際の企業用に制作したウェブサイトです。Flask によるフォーム処理や、生成AIのAPI接続を想定した構成など、フルスタック開発のスキルを示す目的で公開しています。
+実在する企業のニーズに基づき、公式ウェブサイトとして設計・実装しました。  
+Flask によるフォーム処理や、生成AIのAPI連携などを含むフルスタック構成で構築されており、Webエンジニア／AI活用ポジションへの応募用ポートフォリオとして公開しています。
+
+---
 
 ## 🛠️ 使用技術
 
-- フロントエンド: HTML / Tailwind CSS / Flowbite
-- バックエンド: Python / Flask
-- メール送信: Flask-Mail
+| カテゴリ         | 技術スタック                            |
+|------------------|-----------------------------------------|
+| フロントエンド    | HTML / Tailwind CSS / Flowbite / JavaScript |
+| バックエンド      | Python / Flask                          |
+| メール送信        | Flask-Mail（SMTP経由）                  |
+| API連携           | Hugging Face Chatbot API               |
+| セキュリティ対策  | `.env` による機密情報の管理             |
+
+---
 
 ## 🔑 主な機能
 
-- レスポンシブデザインによる企業紹介ページ
-- お問い合わせフォーム（バリデーション付き）
-- メール送信機能（SMTP経由）
-- .envによる機密情報の管理
-- Hugging FaceのChatbot API連携
+- レスポンシブ対応の企業紹介ページ
+- お問い合わせフォーム（バリデーションあり、メール送信対応）
+- `.env` による機密情報のセキュアな管理
+- Hugging Face API による Chatbot の導入（POST通信）
+
+---
 
 ## 📁 プロジェクト構成
 
 .
 ├── app.py
-├── README.md
 ├── requirements.txt
-├── routes
-│   ├── contact.py
-│   ├── factory.py
-│   ├── main.py
-│   ├── product.py
-│   ├── profile.py
-│   └── services.py
-├── static
-│   ├── css
-│   ├── images
-│   ├── js
-│   └── products.json
-└── templates
-    ├── base.html
-    ├── contact.html
-    ├── factory.html
-    ├── footer.html
-    ├── header.html
-    ├── index.html
-    ├── product.html
-    ├── profile.html
-    └── services.html
+├── .env.example
+├── routes/
+│ ├── main.py
+│ ├── contact.py
+│ ├── factory.py
+│ ├── profile.py
+│ ├── product.py
+│ └── services.py
+├── static/
+│ ├── css/
+│ ├── images/
+│ ├── js/
+│ └── products.json
+└── templates/
+├── base.html
+├── header.html
+├── footer.html
+├── index.html
+├── contact.html
+├── factory.html
+├── profile.html
+├── product.html
+└── services.html
 
-7 directories, 19 files
-
-## 🔧 セットアップ方法
+## 🚀 セットアップ方法
 
 ```bash
 git clone https://github.com/irin1996/unni_website.git
 cd backend
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Windows の場合: venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env  # ここに環境変数を設定
+cp .env.example .env  # .env に環境変数を設定
 python app.py
-
-
