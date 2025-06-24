@@ -4,7 +4,7 @@
 
 ## 🛠️ 使用技術
 
-- フロントエンド: HTML / Tailwind CSS / Flowbite
+- フロントエンド: HTML / Tailwind CSS / Flowbite / JavaScript
 - バックエンド: Python / Flask
 - メール送信: Flask-Mail
 
