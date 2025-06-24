@@ -1,4 +1,4 @@
-# Unni 公式サイト（作品集）
+# Unni 公式サイト
 
 これは実際の企業用に制作したウェブサイトです。Flask によるフォーム処理や、生成AIのAPI接続を想定した構成など、フルスタック開発のスキルを示す目的で公開しています。
 
@@ -7,7 +7,6 @@
 - フロントエンド: HTML / Tailwind CSS / Flowbite
 - バックエンド: Python / Flask
 - メール送信: Flask-Mail
-- デプロイ環境: [Render / GitHub Pages]
 
 ## 🔑 主な機能
 
@@ -19,12 +18,39 @@
 
 ## 📁 プロジェクト構成
 
-（可以贴上 tree 命令结果）
+.
+├── app.py
+├── README.md
+├── requirements.txt
+├── routes
+│   ├── contact.py
+│   ├── factory.py
+│   ├── main.py
+│   ├── product.py
+│   ├── profile.py
+│   └── services.py
+├── static
+│   ├── css
+│   ├── images
+│   ├── js
+│   └── products.json
+└── templates
+    ├── base.html
+    ├── contact.html
+    ├── factory.html
+    ├── footer.html
+    ├── header.html
+    ├── index.html
+    ├── product.html
+    ├── profile.html
+    └── services.html
+
+7 directories, 19 files
 
 ## 🔧 セットアップ方法
 
 ```bash
-git clone https://github.com/yourname/unni-portfolio.git
+git clone https://github.com/irin1996/unni_website.git
 cd backend
 python -m venv venv
 source venv/bin/activate
@@ -32,15 +58,4 @@ pip install -r requirements.txt
 cp .env.example .env  # ここに環境変数を設定
 python app.py
 
-## 🔐 環境変数設定（.envファイル）
 
-本プロジェクトでは、メール送信機能にGmailのSMTPを利用しています。  
-セキュリティ保護のため、メールアカウントとパスワードは `.env` に設定してください。
-
-### 1. `.env` ファイルをプロジェクトルートに作成
-
-以下のように `.env` を作成してください（ファイルはアップロードしないでください）：
-
-```env
-MAIL_USERNAME=your_email@gmail.com
-MAIL_PASSWORD=your_generated_app_password

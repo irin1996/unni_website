@@ -1,3 +1,4 @@
 .env
+.env.example
 static/products.json
 static/images/factory
