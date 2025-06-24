@@ -7,16 +7,18 @@ Flask によるフォーム処理や、生成AIのAPI連携などを含むフル
 
 ## 🛠️ 使用技術
 
-- フロントエンド: HTML / Tailwind CSS / Flowbite
+- フロントエンド: HTML / Tailwind CSS / Flowbite/ JavaScript
 - バックエンド: Python / Flask
 - メール送信: Flask-Mail
+- API連携: Hugging Face Chatbot API
+- セキュリティ対策: `.env` による機密情報の管理
 
 ## 🔑 主な機能
 
 - レスポンシブ対応の企業紹介ページ
 - お問い合わせフォーム（バリデーションあり、メール送信対応）
 - `.env` による機密情報のセキュアな管理
-- Hugging Face API による Chatbot の導入（POST通信）
+- Hugging Face API による生成AI の導入（POST通信）
 
 ---
 
