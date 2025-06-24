@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}工場概要｜Unni{% endblock %}
+
+{% block content %}
+
+  <!-- Factory Content -->
+  <section class="bg-white py-10">
+    <div class="max-w-screen-xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold text-blue-600 mb-6">工場概要</h1>
+      <p class="text-gray-700 mb-8">
+        Unniは最新設備を導入し、厳格な品質管理のもとで製品を製造しています。
+      </p>
+
+      <!-- Image Gallery -->
+      <div class="image-list mb-8">
+        <img src="{{ url_for('static', filename='images/factory/image1.jpg') }}" alt="工場イメージ1" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image2.jpg') }}" alt="工場イメージ2" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image3.jpg') }}" alt="工場イメージ3" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image4.jpg') }}" alt="工場イメージ4" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image5.jpg') }}" alt="工場イメージ5" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image6.jpg') }}" alt="工場イメージ6" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image7.jpg') }}" alt="工場イメージ7" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image8.jpg') }}" alt="工場イメージ8" class="gallery-img rounded-lg shadow-lg mb-6">
+        <img src="{{ url_for('static', filename='images/factory/image9.jpg') }}" alt="工場イメージ9" class="gallery-img rounded-lg shadow-lg mb-6">
+      </div>
+
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">所在地</h2>
+      <p class="text-gray-600 mb-8">香港 新界 工業区1丁目12番地</p>
+
+      <iframe class="w-full h-96 rounded-lg shadow-md" src="https://maps.google.com/maps?q=HongKong&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block to_top_button %}
+  <button id="toTopBtn" type="button" class="fixed bottom-5 right-5 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-md opacity-0 transition-opacity">
+    ↑
+  </button>
+{% endblock %}

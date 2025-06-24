@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}お問い合わせ｜Unni{% endblock %}
+{% block content %}
+<section class="bg-white py-10">
+  <div class="max-w-screen-md mx-auto px-4">
+    <h1 class="text-4xl font-bold text-blue-600 text-center mb-10">お問い合わせ</h1>
+
+    <!-- Form-wide error message -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <div class="text-red-800 text-center mb-6">
+          {% for category, message in messages %}
+            {% if category == 'form_error' %}
+              <p class="text-lg font-bold">{{ message }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" class="space-y-6">
+      <!-- Name -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">お名前<span class="text-red-400 pl-3 text-sm">必須</span></label>
+        <input type="text" name="name" value="{{ request.form.get('name', '') }}" placeholder="例：田中 太郎" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'name_error' %}
+                <p class="text-red-800 text-sm mt-2">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      <!-- Furigana -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">フリガナ<span class="text-red-400 pl-3 text-sm">任意</span></label>
+        <input type="text" name="furigana" value="{{ request.form.get('furigana', '') }}" placeholder="例：タナカ タロウ" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">メールアドレス<span class="text-red-400 pl-3 text-sm">必須</span></label>
+        <input type="email" name="email" value="{{ request.form.get('email', '') }}" placeholder="例：example@example.com" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'email_error' %}
+                <p class="text-red-800 text-sm mt-2">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      <!-- Email Confirm -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">メールアドレス（確認用）<span class="text-red-400 pl-3 text-sm">必須</span></label>
+        <input type="email" name="email_confirm" value="{{ request.form.get('email_confirm', '') }}" placeholder="例：example@example.com" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'email_confirm_error' %}
+                <p class="text-red-800 text-sm mt-2">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      <!-- Validation Error Messages -->
+      {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+          <div class="mt-6">
+            {% for category, message in messages %}
+              {% if category == 'validation_error' %}
+                <p class="text-red-800 text-sm">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <!-- Phone -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">電話番号<span class="text-red-400 pl-3 text-sm">必須</span></label>
+        <input type="text" name="phone" value="{{ request.form.get('phone', '') }}" placeholder="例：090-1234-5678" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'phone_error' %}
+                <p class="text-red-800 text-sm mt-2">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      <!-- Company -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">会社名<span class="text-red-400 pl-3 text-sm">任意</span></label>
+        <input type="text" name="company" value="{{ request.form.get('company', '') }}" placeholder="例：株式会社サンプル" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label class="block mb-2 text-lg font-bold text-gray-900">内容<span class="text-red-400 pl-3 text-sm">必須</span></label>
+        <textarea name="message" rows="6" placeholder="お問い合わせ内容を入力してください" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">{{ request.form.get('message', '') }}</textarea>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'message_error' %}
+                <p class="text-red-800 text-sm mt-2">{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-5 rounded-lg">
+        送信する
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+<!-- To Top Button -->
+{% block to_top_button %}
+<button id="toTopBtn" type="button" class="fixed bottom-5 right-5 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-md opacity-0 transition-opacity">
+  ↑
+</button>
+{% endblock %}

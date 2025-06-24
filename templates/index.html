@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}ホーム｜Unni{% endblock %}
+
+{% block content %}
+<!-- New Item Section -->
+<section id="services" class="bg-white py-10">
+  <div class="max-w-screen-xl mx-auto text-center">
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">New Item</h1>
+    <p class="text-gray-600 mb-10">最新の商品を紹介します。</p>
+
+    <!-- Swiper Slider -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {% for product in products %}
+        <div class="swiper-slide">
+          <a href="/product/{{ product.id }}" class="block transform transition duration-300 hover:scale-105">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="{{ product.image }}" alt="{{ product.title }}" class="w-full h-60 object-cover">
+              <div class="p-5">
+                <h2 class="text-lg font-semibold text-blue-700 mb-2">{{ product.title }}</h2>
+                <p class="text-gray-600">{{ product.description }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-navigation">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Chat Board Section -->
+<section class="bg-white py-10">
+  <div class="max-w-screen-xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">AIチャットボート</h2>
+    <p class="text-gray-600 mb-6">質問を入力してください。AIが回答します。</p>
+    <div class="chat-board bg-gray-100 rounded-lg p-4">
+      <!-- User Input Text Area -->
+      <textarea id="chatInput" class="border border-gray-300 rounded-lg p-2 w-full mb-4" rows="3" placeholder="質問を入力してください"></textarea>
+      
+      <!-- AI Response Text Area -->
+      <textarea id="chatOutput" class="border border-gray-300 rounded-lg p-2 w-full mb-4" rows="5" placeholder="AIの回答がここに表示されます" readonly></textarea>
+      
+      <!-- Submit Button -->
+      <button id="chatSubmit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">送信</button>
+      
+      <!-- Clear Button -->
+      <button id="chatClear" class="bg-gray-600 text-white px-4 py-2 rounded-lg ml-2">クリア</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}商品一覧｜Unni{% endblock %}
+
+{% block content %}
+<section class="bg-white py-10">
+  <div class="max-w-screen-xl mx-auto text-center">
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">商品</h1>
+    <p class="text-gray-600 mb-10">以下は提供されている商品です。</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for product in products %}
+      <a href="/product/{{ product.id }}" class="block transform transition duration-300 hover:scale-105">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="{{ product.image }}" alt="{{ product.title }}" class="w-full h-60 object-cover">
+          <div class="p-5">
+            <h2 class="text-lg font-semibold text-blue-700 mb-2">{{ product.title }}</h2>
+            <p class="text-gray-600">{{ product.description }}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<!-- To Top Button -->
+{% block to_top_button %}
+<button id="toTopBtn" type="button" class="fixed bottom-5 right-5 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-md opacity-0 transition-opacity">
+  ↑
+</button>
+{% endblock %}

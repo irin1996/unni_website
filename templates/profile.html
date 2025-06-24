@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}会社概要｜Unni{% endblock %}
+
+{% block content %}
+<section class="bg-white py-10">
+  <div class="max-w-screen-xl mx-auto text-center">
+    <header>
+      <h1 class="text-4xl font-bold text-blue-600 mb-4">会社概要</h1>
+      <p class="text-gray-600 mb-6">
+        Unniは、革新的な技術と卓越したサービスを提供することで、顧客の成功を支援します。
+      </p>
+    </header>
+    <main class="text-left">
+      <div class="c-container">
+        <div class="p-company-information">
+          <!-- Company Name -->
+          <dl class="p-company-information__item mb-6">
+            <dt class="text-lg font-semibold text-blue-700">社名</dt>
+            <dd class="text-gray-600">
+              <p>Unni株式会社<br>(英名 : Unni Inc.)</p>
+            </dd>
+          </dl>
+
+          <!-- Representative -->
+          <dl class="p-company-information__item mb-6">
+            <dt class="text-lg font-semibold text-blue-700">代表</dt>
+            <dd class="text-gray-600">
+              <p>山田 太郎（代表取締役 CEO）</p>
+            </dd>
+          </dl>
+
+          <!-- Establishment Date -->
+          <dl class="p-company-information__item mb-6">
+            <dt class="text-lg font-semibold text-blue-700">設立</dt>
+            <dd class="text-gray-600">
+              <p>2005年4月1日</p>
+            </dd>
+          </dl>
+
+          <!-- Capital -->
+          <dl class="p-company-information__item mb-6">
+            <dt class="text-lg font-semibold text-blue-700">資本金</dt>
+            <dd class="text-gray-600">
+              <p>5,000万円</p>
+            </dd>
+          </dl>
+
+          <!-- Headquarters -->
+          <dl class="p-company-information__item mb-6">
+            <dt class="text-lg font-semibold text-blue-700">本社</dt>
+            <dd class="text-gray-600">
+              <p>〒100-0001<br>東京都千代田区丸の内1丁目1-1 丸の内ビルディング10階</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+{% endblock %}

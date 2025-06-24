@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}商品紹介｜Unni{% endblock %}
+
+{% block content %}
+
+  <!-- 商品詳細 Section -->
+  <section class="bg-white py-10">
+    <div class="max-w-screen-xl mx-auto text-center">
+      <h1 id="productTitle" class="text-4xl font-bold text-blue-600 mb-4">{{ product.title }}</h1>
+      
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <img src="{{ product.image }}" alt="商品画像" class="w-full md:w-1/2 rounded-lg shadow-md">
+
+        <div class="text-left">
+          <h2 class="text-2xl font-semibold text-blue-700 mb-3">商品説明</h2>
+          <p class="text-gray-600 mb-6">
+            {{ product.description }}
+          </p>
+
+          <a href="/services" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+            商品一覧に戻る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
+ <!-- To Top Button -->
+ {% block to_top_button %}
+ <button id="toTopBtn" type="button" class="fixed bottom-5 right-5 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-md opacity-0 transition-opacity">
+   ↑
+ </button>
+ {% endblock %}

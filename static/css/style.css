@@ -1,0 +1,179 @@
+/* Reset & Base */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+/* Center the container */
+.c-container {
+  max-width: 800px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding inside the container */
+}
+
+
+/* Featured Products */
+.featured-products {
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.featured-products h2 {
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+/* Style for the company information */
+.p-company-information {
+  background-color: #f9f9f9; /* Optional: Add a light background for better visibility */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  padding: 20px; /* Add padding inside the company information section */
+}
+
+/* Add spacing between dt and dd */
+.p-company-information__item {
+  margin-bottom: 30px; /* Add space between items */
+}
+
+.p-company-information__item dt {
+  font-weight: bold; /* Make the term bold */
+  margin-bottom: 10px; /* Add space below the term */
+  color: #2c3e50; /* Optional: Set a darker text color for better readability */
+}
+
+.p-company-information__item dd {
+  margin: 0; /* Remove default margin */
+  color: #4a4a4a; /* Optional: Set a darker text color for better readability */
+  line-height: 1.6; /* Add spacing between lines for better readability */
+}
+
+
+/* CTA Section */
+.cta {
+    background-color: #ff6b6b;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta .btn {
+    background-color: white;
+    color: #ff6b6b;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+/* Adjust Swiper navigation buttons */
+.swiper-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; /* Add space between slider and navigation buttons */
+}
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: ''; /* Remove default Swiper arrow icons */
+}
+
+/* Styling for the "to top" button */
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Disable interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+#toTopBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Gallery Image */
+.gallery-img {
+  width: 100%; 
+  height: auto; /* Allow images to keep their original aspect ratio */
+  object-fit: contain; /* Ensure the entire image fits within the container */
+  margin-bottom: 20px; /* Add spacing between images */
+}
+
+/* Chat Board Styling */
+.chat-board {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#chatInput, #chatOutput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#chatSubmit {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Add space to the right of the Submit button */
+}
+
+#chatSubmit:hover {
+  background-color: #0056b3;
+}
+
+#chatClear {
+  margin-left: 10px; /* Add space to the left of the Clear button */
+}
+
