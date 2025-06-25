@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
+app.secret_key = os.environ.get('SECRET_KEY')
 
 # configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -25,14 +25,14 @@ from routes.contact import contact
 from routes.factory import factory
 from routes.product import product
 from routes.services import services  
-from routes.profile import profile  # Import the profile Blueprint
+from routes.profile import profile  
 
 app.register_blueprint(main)
 app.register_blueprint(contact)
 app.register_blueprint(factory)
 app.register_blueprint(product)
 app.register_blueprint(services)
-app.register_blueprint(profile)  # Register the profile Blueprint
+app.register_blueprint(profile)  
 
 if __name__ == "__main__":
     app.run(debug=True)
