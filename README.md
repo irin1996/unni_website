@@ -7,7 +7,7 @@ Flask によるフォーム処理や、生成AIのAPI連携などを含むフル
 
 ## 🛠️ 使用技術
 
-- フロントエンド: HTML / Tailwind CSS / Flowbite/ JavaScript
+- フロントエンド: HTML / Tailwind CSS / Flowbite / JavaScript
 - バックエンド: Python / Flask
 - メール送信: Flask-Mail
 - API連携: Hugging Face Chatbot API
